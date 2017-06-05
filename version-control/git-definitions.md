@@ -13,3 +13,5 @@ A commit represents a recorded change in your workflow. A good commit message ha
 
 * What is a merge conflict?
 A merge conflict is what occurs when Git does not incorporate changes from 2 branches that are in the same area and were not at the parent point of where the branches split.
+
+Adding a mention
