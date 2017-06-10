@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Office Hours Signup</title>
+</head>
+<body>
+  <form action="success.html">
+    <fieldset>
+      <div>
+        <label>Email
+          <input type="email" placeholder="email@something.com">
+        </label>
+      </div>
+      <div>
+        <label>Password
+          <input type="password" placeholder="password">
+        </label>
+      </div>
+      <label>Available Office Hour Times</label>
+      <select name="Available-times">
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="01:00 PM">01:00 PM</option>
+        <option value="02:00 PM">02:00 PM</option>
+        <option value="03:00 PM">03:00 PM</option>
+      </select>
+      <div>
+        <label>Enter questions you have</label>
+        <div>
+          <textarea name="questions">
+          </textarea>
+        </div>
+      </div>
+      <label> Did you attend class?</label>
+        <input name="attend-class" type="radio" value="Yes">Yes
+        <input name="attend-class" type="radio" value="No">No
+
+    </fieldset>
+    <button type="submit">Submit request</button>
+  </form>
+
+</body>
+</html>
