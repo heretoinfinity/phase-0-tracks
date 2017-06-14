@@ -1,6 +1,5 @@
 body {
-  max-width: 960px;
-  /*min-width: fit-content;*/
+  min-width: 500px;
 }
 
 
@@ -24,12 +23,12 @@ cite {
   display: inline-block;
 }
 #external-links {
-  max-width: 200px;
+  width: 20%;
   vertical-align: top;
 }
 
 main {
-  max-width: 756px;
+  width: 75%;
 }
 
 /* you're welcome to edit the
@@ -47,4 +46,24 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+    min-width: auto;
+  }
+
+  #external-links, main {
+    display: block;
+
+    /*min-width: 250px;*/
+  }
+
+  #external-links {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
 }
