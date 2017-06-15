@@ -50,20 +50,23 @@ figcaption {
 
 @media screen and (max-width: 500px) {
   body {
-    background-color: hotpink;
+    /*background-color: hotpink;*/
     min-width: auto;
   }
 
   #external-links, main {
     display: block;
-
-    /*min-width: 250px;*/
+    width: 100%;
   }
 
   #external-links {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border: ;
   }
   main {
-    width: 100%;
+    margin-top: 200px;
   }
 }
