@@ -28,6 +28,10 @@ cite {
   /*outline: solid 1px red;*/
 }
 
+#image-links {
+  display: none;
+}
+
 main {
   width: 75%;
 }
@@ -59,10 +63,28 @@ figcaption {
     font-size: 1em;
   }
 
+  #text-links {
+    display:none;
+  }
+
+  #image-links {
+    display: inline-block;
+  }
+
+  #image-links img {
+    width: 15%;
+  }
+
+  #image-links li {
+    display: inline;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+
   #external-links, main {
     display: block;
     width: 100%;
-
   }
 
   #external-links {
@@ -71,8 +93,10 @@ figcaption {
     left: 0;
     background-color: white;
     border: solid 1px black;
-    padding: 0.5em;
+    /*padding: 0.5em;*/
   }
+
+
   main {
     margin-top: 150px;
   }
