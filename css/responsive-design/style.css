@@ -25,6 +25,7 @@ cite {
 #external-links {
   width: 20%;
   vertical-align: top;
+  /*outline: solid 1px red;*/
 }
 
 main {
@@ -54,9 +55,14 @@ figcaption {
     min-width: auto;
   }
 
+  h1 {
+    font-size: 1em;
+  }
+
   #external-links, main {
     display: block;
     width: 100%;
+
   }
 
   #external-links {
@@ -64,9 +70,10 @@ figcaption {
     top: 0;
     left: 0;
     background-color: white;
-    border: ;
+    border: solid 1px black;
+    padding: 0.5em;
   }
   main {
-    margin-top: 200px;
+    margin-top: 150px;
   }
 }
