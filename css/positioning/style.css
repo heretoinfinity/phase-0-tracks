@@ -1,0 +1,31 @@
+* {
+  /*outline: solid 1px red;*/
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+#hat {
+  z-index: 1;
+  position: relative;
+  top: 100px;
+  left: 15px;
+}
+
+#octopus {
+
+  position:;
+  z-index: 0;
+}
+
+
+
+#glasses {
+  z-index: 1;
+  position: relative;
+  top: -188px;
+  left: 7px;
+}
