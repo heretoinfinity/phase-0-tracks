@@ -63,6 +63,10 @@ figcaption {
     font-size: 1em;
   }
 
+  #image-links a {
+    text-decoration: none;
+  }
+
   #text-links {
     display:none;
   }
@@ -81,6 +85,10 @@ figcaption {
     padding: 0 5%;
   }
 
+  #image-links a {
+    text-decoration: none;
+  }
+
 
   #external-links, main {
     display: block;
@@ -93,7 +101,7 @@ figcaption {
     left: 0;
     background-color: white;
     border: solid 1px black;
-    /*padding: 0.5em;*/
+    padding: 0.5em;
   }
 
 
