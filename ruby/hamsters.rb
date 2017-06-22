@@ -21,8 +21,20 @@ else
   age = age.to_i
 end
 
-puts hamster_name
-puts volume
-puts fur_color
-puts good_for_adoption
+puts "The hamster's name is #{hamster_name}."
+puts "The volume is #{volume}."
+puts "The hamster's fur color is #{fur_color}."
+
+if good_for_adoption
+  puts "Yes! The hamster is good for adoption."
+else
+  puts "Oh no! The hamster is not good for adoption."
+end
+
 print age
+if age != nil
+  puts "The hamster is #{age} years old."
+else
+  puts "Age was not entered."
+end
+
