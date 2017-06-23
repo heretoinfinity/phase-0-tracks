@@ -1,3 +1,5 @@
+# METHOD DECLARATIONS
+
 =begin
 Method 1: write encrypt method
 Objective: advance each letter of a string one letter forward
@@ -70,3 +72,41 @@ end
 # nothing else
 
 #puts decrypt(encrypt("swordfish")) # => "swordfish"
+
+# DRIVER CODE
+=begin
+Ask user for password
+Ask user for string
+Ask user for option: encrypt or decrypt
+  Run the function based on option
+Print the returned string
+
+=end
+
+puts "Enter password"
+password = gets.chomp
+
+if password == "secret"
+  puts "What string would you like to input?"
+  string = gets.chomp
+
+  puts "Choose 'encrypt' or 'decrypt'"
+  option = gets.chomp.downcase
+
+  if option == "encrypt"
+    puts encrypt(string)
+  elsif option == 'decrypt'
+    puts decrypt(string)
+  else
+    puts "ERROR: Incorrect option"
+  end
+else
+  puts "ERROR: Incorrect password"
+end
+
+
+
+
+
+
+
