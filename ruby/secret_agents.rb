@@ -59,7 +59,6 @@ def decrypt(encrypted_string)
   return encrypted_string
 end
 
-
 # puts decrypt('abc de') # => zab cd
 # puts decrypt("bcd") # => "abc"
 # puts decrypt("afe") # => "zed"
@@ -69,4 +68,5 @@ end
 # the regular string.next method, both methods are based
 # on the characters in  "abcdefghijklmnopqrstuvwxyz" and
 # nothing else
-puts decrypt(encrypt("swordfish")) # => "swordfish"
+
+#puts decrypt(encrypt("swordfish")) # => "swordfish"
