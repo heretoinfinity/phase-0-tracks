@@ -13,21 +13,15 @@ Return encrypted string
 =end
 
 def encrypt(unencrypted_string)
-  # puts "Input: #{unencrypted_string}"
   for character in (0...unencrypted_string.length)
-    # puts "index: #{character}"
-    # puts "character: #{unencrypted_string[character]}"
-    # puts "String before: #{unencrypted_string}"
     if unencrypted_string[character] == " "
       next
     elsif unencrypted_string[character] == "z"
       unencrypted_string[character] = "a"
     else
       unencrypted_string[character] = unencrypted_string[character].next!
-      #puts "expected result: #{unencrypted_string[character].next!}"
     end
   end
-  # puts "String after: #{unencrypted_string}"
   return unencrypted_string
 end
 # puts encrypt("acd z") # => "bde aa"
@@ -58,9 +52,6 @@ def decrypt(encrypted_string)
       next
     else
       index_of_char = check_string.index(encrypted_string[character])
-      # puts "index in main string #{index_of_char}"
-      # puts "character: #{encrypted_string[character]}"
-      # this solves case of 'a' as it will give -1, the last index
       encrypted_string[character] = check_string[index_of_char - 1]
     end
   end
