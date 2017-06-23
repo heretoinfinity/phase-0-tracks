@@ -20,7 +20,7 @@ end
 # puts encrypt("abc") # => "bcd"
 # puts encrypt("zed") # => "afe"
 
-def test_func(actual_value, expected_value, test_name)
+def assert_equal(actual_value, expected_value, test_name)
   if actual_value == expected_value
     puts "PASSED: Actual and expected values equal: " \
     "\"#{expected_value}\""
@@ -30,6 +30,6 @@ def test_func(actual_value, expected_value, test_name)
   end
 end
 
-# test_func(encrypt("acd z"), "bde aa", "encrypt")
-# test_func(encrypt("abc"), "bcd", "encrypt")
-# test_func(encrypt("zed"), "afe", "encrypt")
+# assert_equal(encrypt("acd z"), "bde aa", "encrypt")
+# assert_equal(encrypt("abc"), "bcd", "encrypt")
+# assert_equal(encrypt("zed"), "afe", "encrypt")
