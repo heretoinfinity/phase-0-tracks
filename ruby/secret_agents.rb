@@ -58,7 +58,6 @@ def decrypt(encrypted_string)
       next
     else
       index_of_char = check_string.index(encrypted_string[character])
-
       # puts "index in main string #{index_of_char}"
       # puts "character: #{encrypted_string[character]}"
       # this solves case of 'a' as it will give -1, the last index
@@ -69,20 +68,6 @@ def decrypt(encrypted_string)
   return encrypted_string
 end
 
-
-def assert_equal(actual_value, expected_value, test_name)
-  if actual_value == expected_value
-    puts "PASSED: Actual and expected values equal: " \
-    "\"#{expected_value}\""
-  else
-    puts "FAILED \"#{test_name}\": Expected " \
-    "\"#{expected_value}\", but got \"#{actual_value}\""
-  end
-end
-
-# assert_equal(encrypt("acd z"), "bde aa", "encrypt")
-# assert_equal(encrypt("abc"), "bcd", "encrypt")
-# assert_equal(encrypt("zed"), "afe", "encrypt")
 
 # puts decrypt('abc de') # => zab cd
 # puts decrypt("bcd") # => "abc"
