@@ -9,17 +9,27 @@ year = gets.chomp.to_i
 
 puts "Our company cafeteria serves garlic bread." \
 " Should we order some for you? "
-serve_garlic? = gets.chomp.downcase
+serve_garlic = gets.chomp.downcase
 if serve_garlic == "yes"
   serve_garlic = true
 else
   serve_garlic = false
+end
 
 puts "Would you like to enroll in the company’s " \
 "health insurance?"
-needs_insurance? = gets.chomp.downcase
-if needs_insurance? == "yes"
-  needs_insurance? = true
+needs_insurance = gets.chomp.downcase
+if needs_insurance == "yes"
+  needs_insurance = true
 else
-  needs_insurance? = false
+  needs_insurance = false
+end
+
+current_year = Date.today.year
+
+if current_year - year == age
+  age_right = true
+else
+  age_right = false
+end
 
