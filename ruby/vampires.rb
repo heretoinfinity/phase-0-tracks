@@ -1,3 +1,4 @@
+require 'Date'
 puts "What is your name?"
 applicant_name = gets.chomp
 
