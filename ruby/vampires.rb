@@ -34,3 +34,16 @@ else
   age_right = false
 end
 
+
+if age_right && (serve_garlic || needs_insurance)
+  puts "Probably not a vampire."
+elsif !age_right && (!serve_garlic && !needs_insurance)
+  puts "Almost certainly a vampire."
+elsif !age_right && (!serve_garlic || !needs_insurance)
+  puts "Probably a vampire"
+elsif applicant_name == "Drake Cula" \
+  || applicant_name == "Tu Fang"
+  puts "Definitely a vampire."
+else
+  puts "Results inconclusive."
+end
