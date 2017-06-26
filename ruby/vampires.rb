@@ -39,19 +39,40 @@ num_applicants = gets.chomp.to_i
     age_right = false
   end
 
-
+  answer = ""
   if age_right && (serve_garlic || needs_insurance)
     if applicant_name == "Drake Cula" \
     || applicant_name == "Tu Fang"
-      puts "Definitely a vampire."
+      answer = "Definitely a vampire."
+      puts answer
     else
-     puts "Probably not a vampire."
+     answer = "Probably not a vampire."
+     puts answer
    end
   elsif !age_right && (!serve_garlic && !needs_insurance)
-    puts "Almost certainly a vampire."
+    answer =  "Almost certainly a vampire."
+    puts answer
   elsif !age_right && (!serve_garlic || !needs_insurance)
-    puts "Probably a vampire"
+    answer = "Probably a vampire"
+    puts answer
   else
-    puts "Results inconclusive."
+    answer = "Results inconclusive."
+    puts answer
   end
+
+  puts "List allergies:"
+  allergy = gets.chomp
+
+  # handle case where no allergy is entered
+  if allergy != "done"
+    until allergy == "done" || allergy == "sunshine"
+      allergy = gets.chomp
+    end
+  end
+
+  if allergy == "sunshine"
+    answer = "Probably a vampire"
+  end
+
+  puts answer
 }
