@@ -1,0 +1,38 @@
+------------------------------------------------------------
+Robot-elevator architecture
+------------------------------------------------------------
+Give robot floor to go to (destination)
+Robot to figure out what floor it is on (origin)
+
+  If floor destination is higher, pick button with arrow
+  pointing up and press it. Wait for elevator to
+  arrive.
+
+  Else if floor destination is lower, pick button with
+  arrow pointing down and press it. Wait for elevator to
+  arrive.
+
+  Otherwise, if the floor destination is the same as
+  the origin, stay on the same floor.
+
+When elevator arrives and doors open, if elevator is
+full, don't enter. Wait for door to close and pick
+the same button again until elevator with space arrives.
+
+When elevator arrives, walk to center of elevator,
+and make 360 degree turn. Locate where the floor
+buttons are and move towards them. From the top left of
+the number pad moving from left to right and top to bottom,
+find floor destination given to you at the beginning. Once
+found press it.
+
+When the floor number that appears on the screen is the
+same as floor destination, walk out of the elevator.
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+Task: Fold ticket
+------------------------------------------------------------
+
