@@ -33,6 +33,24 @@ same as floor destination, walk out of the elevator.
 
 
 ------------------------------------------------------------
-Task: Fold ticket
+Task: Fold t-shirt
 ------------------------------------------------------------
+Take t-shirt out of basket
+Check where the tag is
+  If tag is outside, roll it out from inside out
+
+Place the front of t-shirt on table top with collar facing
+the left
+
+Fold north side of t-shirt at edge of collar to right end
+toward you
+
+Fold south side of t-shirt at edge of collar to right end
+away from you
+
+Fold the right end so that the right edge coincides
+with the collar.
+
+
+
 
