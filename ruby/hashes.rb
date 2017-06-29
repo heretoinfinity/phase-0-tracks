@@ -17,3 +17,38 @@ the hash again
 
 
 =end
+
+entry = {}
+
+puts "Enter your name"
+applicant_name = gets.chomp
+entry[:applicant_name] = applicant_name
+
+puts "Enter your age"
+age = gets.chomp.to_i
+entry[:age] = age
+
+puts "Enter decor theme"
+decor_theme = gets.chomp
+entry[:decor_theme] = decor_theme
+
+puts "Enter desired duration of work in days"
+duration = gets.chomp.to_i
+entry[:duration] = duration
+
+puts "Have we done work with you before? (y/n)"
+work_before = gets.chomp.downcase
+if work_before == 'y'
+  work_before = true
+else
+  work_before = false
+end
+
+entry[:work_before] = work_before
+
+puts entry
+
+
+
+
+
