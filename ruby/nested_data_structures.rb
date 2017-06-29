@@ -1,3 +1,10 @@
+=begin
+highway hash, which has
+4 keys for lanes,
+Each lane has an array as the value
+Each array has a hash with keys for car & passengers
+=end
+
 highway = {
   east_high_speed_lane: [
     {
