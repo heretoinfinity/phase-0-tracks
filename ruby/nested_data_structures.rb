@@ -47,3 +47,35 @@ highway = {
     },
   ],
 }
+
+puts "----------------------------------"
+# access west_low_speed_lane
+puts "Accss west_low_speed_lane"
+puts "----------------------------------"
+puts highway[:west_low_speed_lane]
+puts "##################################"
+puts ""
+
+puts "----------------------------------"
+puts "Alternative access to the west_low_speed_lane"
+puts "----------------------------------"
+puts highway["west_low_speed_lane".to_sym] # alternative
+puts "##################################"
+puts ""
+
+
+# access the car Tesla
+puts "----------------------------------"
+puts "Access Tesla"
+puts highway[:west_high_speed_lane][0][:car]
+puts "##################################"
+puts ""
+
+# access Anthony
+puts "----------------------------------"
+puts "Access Anthony"
+puts highway[:east_low_speed_lane][1][:passengers][0]
+puts "##################################"
+puts ""
+
+
