@@ -1,9 +1,4 @@
 =begin
-the client's name, age, number of children, decor theme,
-days for work
-phone
-done work before
-
 prompt user for information
 convert user information into appropriate values, converting
 yes and no to true and false respectively
