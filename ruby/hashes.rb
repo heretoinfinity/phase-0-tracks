@@ -48,6 +48,21 @@ entry[:work_before] = work_before
 
 puts entry
 
+puts "Anything you would like to change?"
+change = gets.chomp
+
+puts "Updated value"
+updated_value = gets.chomp
+
+if change != "none"
+  entry[change.to_sym] = updated_value
+end
+
+puts "Latest version of entered info"
+puts entry
+
+
+
 
 
 
