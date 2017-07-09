@@ -7,6 +7,9 @@
   than creating 'if-else' or 'case' statements for
   the vowels and consonants.
 
+  in each array - need to split the characters, and get the
+  next
+
 2.  take name string and split into first and last names,
 put them in an array, lower cases of both, and swap
 positions -> swap&lower()
@@ -19,3 +22,8 @@ join the 2 array elements and form a string
 ->capitalize&Join()
 
 =end
+
+def next_vowel(string)
+  compare = "aeiou"
+
+end
