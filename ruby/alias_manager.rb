@@ -42,14 +42,14 @@ def next_vowel(char)
   end
 end
 
-puts "---------------"
-puts "Testing next_vowel"
-puts "---------------"
-puts next_vowel('A')
-puts next_vowel('e')
-puts next_vowel('U')
-puts next_vowel('1')
-puts next_vowel('B')
+# puts "---------------"
+# puts "Testing next_vowel"
+# puts "---------------"
+# puts next_vowel('A')
+# puts next_vowel('e')
+# puts next_vowel('U')
+# puts next_vowel('1')
+# puts next_vowel('B')
 
 def next_consonant(char)
   char = char.downcase
@@ -70,14 +70,14 @@ def next_consonant(char)
   end
 end
 
-puts "---------------"
-puts "Testing next_consonant"
-puts "---------------"
-puts next_consonant('B') # => 'c'
-puts next_consonant('e') # => 'Not a consonant'
-puts next_consonant('z') # => 'b'
-puts next_consonant('d') # => 'f'
-puts next_consonant('1') # => 'Not a consonant'
+# puts "---------------"
+# puts "Testing next_consonant"
+# puts "---------------"
+# puts next_consonant('B') # => 'c'
+# puts next_consonant('e') # => 'Not a consonant'
+# puts next_consonant('z') # => 'b'
+# puts next_consonant('d') # => 'f'
+# puts next_consonant('1') # => 'Not a consonant'
 
 def next_letter(char)
   # checking consonant first since more common
@@ -93,14 +93,14 @@ def next_letter(char)
   return next_vowel(char)
 end
 
-puts "---------------"
-puts "Testing next_letter"
-puts "---------------"
-puts next_letter('A') # => 'e'
-puts next_letter('Z') # => 'b'
-puts next_letter('U') # => 'a'
-puts next_letter('1') # => nil
-puts next_letter('#') # => nil
+# puts "---------------"
+# puts "Testing next_letter"
+# puts "---------------"
+# puts next_letter('A') # => 'e'
+# puts next_letter('Z') # => 'b'
+# puts next_letter('U') # => 'a'
+# puts next_letter('1') # => nil
+# puts next_letter('#') # => nil
 
 def swap_names(full_name)
   names = full_name.split(" ")
@@ -110,13 +110,13 @@ def swap_names(full_name)
   return [last_name, first_name]
 end
 
-puts "---------------"
-puts "Testing swap_names"
-puts "---------------"
-p swap_names('asdf') # => "Enter 2 names"
-p swap_names('as df') # => ['df', 'as']
-p swap_names('123 45') # => ['45', '123']
-p swap_names('123 45 sdf') # => "Enter just 2 names"
+# puts "---------------"
+# puts "Testing swap_names"
+# puts "---------------"
+# p swap_names('asdf') # => "Enter 2 names"
+# p swap_names('as df') # => ['df', 'as']
+# p swap_names('123 45') # => ['45', '123']
+# p swap_names('123 45 sdf') # => "Enter just 2 names"
 
 
 
@@ -150,7 +150,7 @@ def get_spy_name(names)
   return names_arr.join()
 end
 
-puts "---------------"
-puts "Testing get_spy_name"
-puts "---------------"
-puts get_spy_name("Felicia Torres")
+# puts "---------------"
+# puts "Testing get_spy_name"
+# puts "---------------"
+# puts get_spy_name("Felicia Torres")
