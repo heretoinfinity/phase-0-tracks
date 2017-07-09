@@ -29,7 +29,7 @@ def next_vowel(char)
 
   # not a vowel, i.e., no instance of the variable
   if compare.count(char) == 0
-    print "Not a vowel"
+    # puts "Not a vowel"
     return nil
   end
 
@@ -57,7 +57,7 @@ def next_consonant(char)
 
   # not a consonant, i.e., no instance of the variable
   if compare.count(char) == 0
-    print "Not a consonant"
+    # puts "Not a consonant"
     return nil
   end
 
@@ -79,17 +79,30 @@ puts next_consonant('z') # => 'b'
 puts next_consonant('d') # => 'f'
 puts next_consonant('1') # => 'Not a consonant'
 
-def swap_names(full_name)
-
-  # no space in between names
-  if full_name.count(" ") == 0
-    print "Enter 2 names"
-    return nil
-  elsif full_name.count(" ") > 1
-    print "Enter just 2 names"
-    return
+def next_letter(char)
+  # checking consonant first since more common
+  if next_consonant(char) == nil
+    if next_vowel(char) == nil
+      # puts "Character neither consonant nor vowel"
+      return nil
+    end
+  else
+    return next_consonant(char)
   end
 
+  return next_vowel(char)
+end
+
+puts "---------------"
+puts "Testing next_letter"
+puts "---------------"
+puts next_letter('A') # => 'e'
+puts next_letter('Z') # => 'b'
+puts next_letter('U') # => 'a'
+puts next_letter('1') # => nil
+puts next_letter('#') # => nil
+
+def swap_names(full_name)
   names = full_name.split(" ")
   first_name = names[0]
   last_name = names[1]
@@ -104,3 +117,40 @@ p swap_names('asdf') # => "Enter 2 names"
 p swap_names('as df') # => ['df', 'as']
 p swap_names('123 45') # => ['45', '123']
 p swap_names('123 45 sdf') # => "Enter just 2 names"
+
+
+
+def get_spy_name(names)
+  # no space in between names or too manynames
+  if names.count(" ") == 0
+    print "Enter 2 names"
+    return nil
+  elsif names.count(" ") > 1
+    print "Enter just 2 names"
+    return nil
+  end
+
+  names_arr = swap_names(names)
+
+  names_arr.map!{ |name|
+    chars_array = name.chars
+
+    chars_array.map!{ |char|
+      char = next_letter(char)
+    }
+  }
+
+  # capitalize first letter of both names
+  names_arr[0][0].capitalize!
+  names_arr[1][0].capitalize!
+
+  #insert space after new first name
+  names_arr.insert(1, ' ')
+
+  return names_arr.join()
+end
+
+puts "---------------"
+puts "Testing get_spy_name"
+puts "---------------"
+puts get_spy_name("Felicia Torres")
