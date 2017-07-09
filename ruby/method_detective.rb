@@ -7,7 +7,7 @@
 "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+"zom".replace('zoom')
 # => “zoom”
 
 "enhance".center(15)
@@ -28,7 +28,7 @@
 "The mystery of the missing first letter".reverse.chop.reverse
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+"Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
 "z".codepoints
@@ -38,7 +38,5 @@
 # This is the code numbering for the letter 'z' in Unicode 8-bits (UTF-8).
 # The encoding format can be found with 'z'.encoding
 
-# "How many times does the letter 'a' appear in this string?".<???>
+"How many times does the letter 'a' appear in this string?".count('a')
 # => 4
-
-#count
