@@ -11,8 +11,8 @@
   next character
 
 2.  take name string and split into first and last names,
-put them in an array, lower cases of both, and swap
-positions -> swap&lower()
+put them in an array, and swap
+positions -> swap_names(str) => array
 
 3.take each name, split each character
 and get the next letter, capitalize -> getNext()
@@ -55,7 +55,7 @@ def next_consonant(char)
   char = char.downcase
   compare = "bcdfghjklmnpqrstvwxyz"
 
-  # not a vowel, i.e., no instance of the variable
+  # not a consonant, i.e., no instance of the variable
   if compare.count(char) == 0
     print "Not a consonant"
     return nil
@@ -78,3 +78,29 @@ puts next_consonant('e') # => 'Not a consonant'
 puts next_consonant('z') # => 'b'
 puts next_consonant('d') # => 'f'
 puts next_consonant('1') # => 'Not a consonant'
+
+def swap_names(full_name)
+
+  # no space in between names
+  if full_name.count(" ") == 0
+    print "Enter 2 names"
+    return nil
+  elsif full_name.count(" ") > 1
+    print "Enter just 2 names"
+    return
+  end
+
+  names = full_name.split(" ")
+  first_name = names[0]
+  last_name = names[1]
+
+  return [last_name, first_name]
+end
+
+puts "---------------"
+puts "Testing swap_names"
+puts "---------------"
+p swap_names('asdf') # => "Enter 2 names"
+p swap_names('as df') # => ['df', 'as']
+p swap_names('123 45') # => ['45', '123']
+p swap_names('123 45 sdf') # => "Enter just 2 names"
