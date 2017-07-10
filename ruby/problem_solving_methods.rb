@@ -65,10 +65,9 @@ start with each
 =end
 def bubble_sort(arr)
   length = arr.length
-  reduced_length = length - 1
+  outer_length = length - 1
 
-  for outer_ind in (0...reduced_length-1)
-    p "length:  #{length}"
+  for outer_ind in (0...outer_length)
     for ind in (0...length-1)
       left_num = arr[ind]
       right_num = arr[ind + 1]
@@ -78,9 +77,6 @@ def bubble_sort(arr)
       end
     end
     length = length - 1
-      p "new_length:  #{length}"
-      p "arr:  #{arr}"
-      p '---------'
   end
 
   return arr
@@ -88,6 +84,8 @@ end
 
 arr1 = [0, 1, 2, 3]
 arr2 = [30, 20, 10, 7]
+arr3 = [120, 90, 80, 50, 10, 4]
 
 # p bubble_sort(arr1) # => [0, 1, 2, 3]
 p bubble_sort(arr2) # => [20, 10, 7, 30]
+p bubble_sort(arr3) # => [4, 10, 50, 80, 90, 120]
