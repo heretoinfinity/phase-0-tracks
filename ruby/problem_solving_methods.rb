@@ -59,9 +59,13 @@ end
 
 
 =begin
-start with each
+Have a loop to go through the array once and check
+the elements if previous element is > than the next
+element and if so, swap them.
 
-
+Have an outer loop to repeat the above process
+for the length of the array - 1 as it takes m - 1
+iterations to bubble sort an array with m elements.
 =end
 def bubble_sort(arr)
   length = arr.length
