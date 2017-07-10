@@ -154,3 +154,19 @@ end
 # puts "Testing get_spy_name"
 # puts "---------------"
 # puts get_spy_name("Felicia Torres")
+
+puts "Enter agent name"
+agent_name = gets.chomp
+names_hash = {}
+
+until agent_name.downcase == 'quit'
+  spy_name = get_spy_name(agent_name)
+
+  puts "Spy name: " + spy_name
+  names_hash[agent_name] = spy_name
+  agent_name = gets.chomp
+end
+
+names_hash.each { |key, value|
+  puts "#{value} is actually #{key}"
+}
