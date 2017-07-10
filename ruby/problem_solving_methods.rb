@@ -11,13 +11,10 @@ def search_array(array, search_integer)
   end
 end
 
-
-
-
 # Code to test search_array
-arr = [42, 89, 23, 1]
-p search_array(arr, 1) #=> 3
-p search_array(arr, 24) #=> nil
+# arr = [42, 89, 23, 1]
+# p search_array(arr, 1) #=> 3
+# p search_array(arr, 24) #=> nil
 
 
 =begin
@@ -51,11 +48,46 @@ def fib(n)
   return sequence
 end
 
-fib(6)
-sequence = fib(100)
+# fib(6)
+# sequence = fib(100)
 
-if sequence[-1] == 218922995834555169026
-  puts 'works'
-else
-  puts 'wrong'
+# if sequence[-1] == 218922995834555169026
+#   puts 'works'
+# else
+#   puts 'wrong'
+# end
+
+
+=begin
+start with each
+
+
+=end
+def bubble_sort(arr)
+  length = arr.length
+  reduced_length = length - 1
+
+  for outer_ind in (0...reduced_length-1)
+    p "length:  #{length}"
+    for ind in (0...length-1)
+      left_num = arr[ind]
+      right_num = arr[ind + 1]
+      if left_num > right_num
+        arr[ind] = right_num
+        arr[ind + 1] = left_num
+      end
+    end
+    length = length - 1
+      p "new_length:  #{length}"
+      p "arr:  #{arr}"
+      p '---------'
+  end
+
+  return arr
 end
+
+arr1 = [0, 1, 2, 3]
+arr2 = [30, 20, 10, 7]
+
+# p bubble_sort(arr1) # => [0, 1, 2, 3]
+p bubble_sort(arr2) # => [20, 10, 7, 30]
