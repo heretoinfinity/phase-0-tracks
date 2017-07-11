@@ -46,9 +46,9 @@ groceries = "carrots apples cereal pizza"
 groceries_hash = create_list(groceries)
 
 add_item(groceries_hash, 'carrots', 4)
-puts groceries_hash
+#puts groceries_hash
 add_item(groceries_hash, 'beets', 4)
-puts groceries_hash
+#puts groceries_hash
 
 # Method to remove an item from the list
 # input: list, item
@@ -65,18 +65,60 @@ def remove_item(list, item)
   if list.has_key?(item)
     list.delete(item)
   else
-    puts "Item not in list"
+    puts "ERROR: Item not in list"
   end
   return list
 end
 
+# puts groceries_hash
+# remove_item(groceries_hash, 'balloons')
+# puts groceries_hash
+
 # Method to update the quantity of an item
-# input:
+# input: list, item, new quantity
 # steps:
-# output:
+# Check to see if item is in the list
+#   IF so
+#     update the quantity
+#   ELSE
+#     give an error
+# Return the updated list
+# output: list
+
+def update_item(list, item, quantity)
+  if list.has_key?(item)
+    list[item] = quantity
+  else
+    puts "ERROR: Item not in list"
+  end
+  return list
+end
+# puts groceries_hash
+# update_item(groceries_hash, 'beets', 99)
+# puts groceries_hash
+# update_item(groceries_hash, 'balloons', 99)
+# puts groceries_hash
 
 # Method to print a list and make it look pretty
 # input: hash
 # steps:
+# IF empty list
+#   say no list
+# ELSE
+#   Iterate through list and print item and its quantity
 
-# output: string
+# output: string (printed and not return value)
+
+def print_list(list)
+  if list.empty?
+    puts "List is EMPTY"
+  else
+    puts "The list has:"
+    list.each{ |key, value|
+      p "#{value} #{key}"
+    }
+  end
+end
+print_list(groceries_hash)
+print_list({})
+
