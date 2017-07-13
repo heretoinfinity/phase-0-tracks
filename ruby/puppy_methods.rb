@@ -1,5 +1,5 @@
 class Puppy
-  def initialize
+  def initiali
     puts "Initializing new puppy instance ..."
   end
   def fetch(toy)
