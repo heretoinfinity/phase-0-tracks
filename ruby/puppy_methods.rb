@@ -36,6 +36,14 @@ class Gymnast
   def initialize
     puts "Created gymnast"
   end
+
+  def flip
+      puts "Flipping"
+  end
+
+  def jump
+      puts "Jumping"
+  end
 end
 
 gymnasts = []
@@ -44,3 +52,9 @@ gymnasts = []
   gymnasts << Gymnast.new
 }
 # performer = Gymnast.new
+
+
+gymnasts.each { |gymnast|
+    gymnast.flip
+    gymnast.jump
+}
