@@ -1,5 +1,7 @@
 class Puppy
-
+  def initialize
+    puts "Initializing new puppy instance ..."
+  end
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -28,4 +30,4 @@ pop = Puppy.new
 pop.fetch('ball')
 pop.speak(3)
 pop.roll_over
-dog_years(3)
+pop.dog_years(3)
