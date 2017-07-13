@@ -7,3 +7,5 @@ class Puppy
 
 end
 
+pop = Puppy.new
+pop.fetch('ball')
