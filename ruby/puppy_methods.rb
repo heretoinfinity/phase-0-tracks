@@ -22,12 +22,25 @@ class Puppy
   end
 
   def whimper
-    puts "Oo oo"
+    puts "*whimpers*"
   end
 end
 
-pop = Puppy.new
-pop.fetch('ball')
-pop.speak(3)
-pop.roll_over
-pop.dog_years(3)
+# pop = Puppy.new
+# pop.fetch('ball')
+# pop.speak(3)
+# pop.roll_over
+# pop.dog_years(3)
+
+class Gymnast
+  def initialize
+    puts "Created gymnast"
+  end
+end
+
+gymnasts = []
+# DRIVER CODE FOR GYMNAST
+50.times { |ind|
+  gymnasts << Gymnast.new
+}
+# performer = Gymnast.new
