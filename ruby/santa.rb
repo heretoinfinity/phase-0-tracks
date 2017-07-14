@@ -34,6 +34,14 @@ class Santa
   def change_gender=(gender)
     @gender = gender
   end
+
+  def get_age
+    @age
+  end
+
+  def get_ethnicity
+    @ethnicity
+  end
 end
 
 santas = []
