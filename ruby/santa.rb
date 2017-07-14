@@ -1,6 +1,6 @@
 class Santa
-  attr_reader(:age, :ethnicity)
-  attr_accessor(:gender)
+  attr_reader(:ethnicity)
+  attr_accessor(:age, :gender)
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
@@ -49,9 +49,11 @@ ethnicities = ["black", "Latino", "white", "Japanese-African", \
   "prefer not to say", "Mystical Creature (unicorn)", \
   "bird", "animal", "N/A"]
 
-1000.times {
+1000.times { |index|
   santas << Santa.new(genders[rand(genders.length)], \
     ethnicities[rand(ethnicities.length)])
+  #Set your new Santa's age to a random number between 0 and 140.
+  santas[index].age=(rand(140))
 }
 # santas << Santa.new("agender", "black")
 # santas << Santa.new("female", "Latino")
