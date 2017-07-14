@@ -4,6 +4,9 @@ module Shout
   end
 
   def self.yell_happily(words)
-    "#{words. :)}"
+    "#{words}. :)"
   end
 end
+
+puts Shout.yell_angrily("Agh")
+puts Shout.yell_happily("Yay")
