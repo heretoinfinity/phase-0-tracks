@@ -49,11 +49,14 @@ ethnicities = ["black", "Latino", "white", "Japanese-African", \
   "prefer not to say", "Mystical Creature (unicorn)", \
   "bird", "animal", "N/A"]
 
-1000.times { |index|
+1000.times { |ind|
   santas << Santa.new(genders[rand(genders.length)], \
     ethnicities[rand(ethnicities.length)])
   #Set your new Santa's age to a random number between 0 and 140.
-  santas[index].age=(rand(140))
+  santas[ind].age=(rand(140))
+  puts "age: #{santas[ind].age}"
+  puts "ethnicity: #{santas[ind].ethnicity}"
+  puts "gender: #{santas[ind].gender}"
 }
 # santas << Santa.new("agender", "black")
 # santas << Santa.new("female", "Latino")
@@ -62,4 +65,4 @@ ethnicities = ["black", "Latino", "white", "Japanese-African", \
 # santas << Santa.new("female", "prefer not to say")
 # santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 # santas << Santa.new("N/A", "N/A")
-puts santas
+#puts santas
