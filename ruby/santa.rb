@@ -30,6 +30,10 @@ class Santa
     reindeer = @reindeer_ranking.shift
     @reindeer_ranking.push(reindeer)
   end
+
+  def change_gender=(gender)
+    @gender = gender
+  end
 end
 
 santas = []
