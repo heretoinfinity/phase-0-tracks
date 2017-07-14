@@ -21,6 +21,15 @@ class Santa
   def eat_milk_and_cookies(cookie)
     puts "That was a good #{cookie}!"
   end
+
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at
+    reindeer = @reindeer_ranking.shift
+    @reindeer_ranking.push(reindeer)
+  end
 end
 
 santas = []
