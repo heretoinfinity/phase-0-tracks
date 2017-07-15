@@ -27,3 +27,20 @@ Method to check if letter is in word
 
 
 =end
+
+class GuessWord
+  attr_accessor :is_over, :player2_progress
+  attr_reader :word, :guess_count
+
+  def initialize(word)
+    @word = word
+    @is_over = false
+    @player2_progress = Array.new(word.length, "_")
+    @guess_count = word.length
+  end
+
+
+end
+
+# word = GuessWord.new('cat')
+# puts word.word
