@@ -36,11 +36,34 @@ class GuessWord
     @word = word
     @is_over = false
     @player2_progress = Array.new(word.length, "_")
-    @guess_count = word.length
+    @guess_count = 0
   end
 
+  def check_letter(letter)
+    @guess_count += 1
 
+    if @guess_count < @word.length
+      indices = (0...@word.length).find_all do |i|
+        @word[i, 1] == letter
+      end
+
+      correct = false # correct if there are indices/instances not []
+
+      indices.each{ |ind|
+        @player2_progress[ind] = letter
+        correct = true #indicate letter found
+      }
+    end
+
+    if @guess_count == @word.length
+      @is_over = true
+    end
+
+    return correct
+  end
 end
 
-# word = GuessWord.new('cat')
-# puts word.word
+word = GuessWord.new('cattle')
+#puts word.word
+
+puts word.check_letter('t')

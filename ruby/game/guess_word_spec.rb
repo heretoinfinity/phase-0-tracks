@@ -1,18 +1,14 @@
 require_relative 'guess_word'
 
 describe GuessWord do
-  let(:game) { GuessWord.new("cat") }
+  let(:game) { GuessWord.new("cattle") }
 
   it "checks the word given on initiailizing" do
-    expect(game.word).to eq "cat"
+    expect(game.word).to eq "cattle"
   end
 
   it "checks length of word" do
-    expect(game.guess_count).to eq 3
-  end
-
-  it "checks the word given on initiailizing" do
-    expect(game.word).to eq "cat"
+    expect(game.guess_count).to eq 0
   end
 
   it "checks if game is over" do
@@ -24,7 +20,15 @@ describe GuessWord do
   end
 
   it "checks player 2's progress" do
-    expect(game.player2_progress).to eq ["_", "_", "_"]
+    expect(game.player2_progress).to eq ["_", "_", "_", "_", "_", "_"]
+  end
+
+  it "check guessed letter that isn't in word" do
+    expect(game.check_letter('x')).to eq false
+  end
+
+  it "check guessed letter that is in word" do
+    expect(game.check_letter('a')).to eq true
   end
 
 
