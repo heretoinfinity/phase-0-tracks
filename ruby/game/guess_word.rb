@@ -39,6 +39,17 @@ class GuessWord
     @guess_count = 0
   end
 
+  def update_player_progress(indices, letter)
+    if indices.empty?
+      return false
+    else
+      indices.each{ |ind|
+        @player2_progress[ind] = letter
+      }
+      return true
+    end
+  end
+
   def check_letter(letter)
     @guess_count += 1
 
@@ -47,12 +58,7 @@ class GuessWord
         @word[i, 1] == letter
       end
 
-      correct = false # correct if there are indices/instances not []
-
-      indices.each{ |ind|
-        @player2_progress[ind] = letter
-        correct = true #indicate letter found
-      }
+      correct = update_player_progress(indices, letter)
     end
 
     if @guess_count == @word.length

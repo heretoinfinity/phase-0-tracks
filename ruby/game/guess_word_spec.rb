@@ -31,5 +31,12 @@ describe GuessWord do
     expect(game.check_letter('a')).to eq true
   end
 
+  it "update player progress given NON-EMPTY array and letter" do
+    expect(game.update_player_progress([2, 3], "t")). to eq true
+  end
+
+  it "update player progress given an EMPTY array and letter" do
+    expect(game.update_player_progress([2, 3], "t")). to eq true
+  end
 
 end
