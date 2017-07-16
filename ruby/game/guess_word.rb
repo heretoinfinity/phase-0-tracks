@@ -40,7 +40,8 @@ class GuessWord
   end
 
   def update_player_progress(indices, letter)
-    if indices.empty?
+    # handle empty array and when index is out of bounds
+    if indices.empty? || indices.max + 1 > @player2_progress.length
       return false
     else
       indices.each{ |ind|
