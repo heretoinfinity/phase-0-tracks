@@ -29,8 +29,8 @@ Method to check if letter is in word
 =end
 
 class GuessWord
-  attr_accessor :is_over, :player2_progress
-  attr_reader :word, :guess_count
+  attr_accessor :is_over
+  attr_reader :word, :guess_count, :player2_progress
 
   def initialize(word)
     @word = word
@@ -58,7 +58,6 @@ class GuessWord
       indices = (0...@word.length).find_all do |i|
         @word[i, 1] == letter
       end
-
       correct = update_player_progress(indices, letter)
     end
 
@@ -70,7 +69,25 @@ class GuessWord
   end
 end
 
-word = GuessWord.new('cattle')
+game = GuessWord.new('cattle')
 #puts word.word
+#puts word.check_letter('t')
 
-puts word.check_letter('t')
+while !game.is_over
+  puts "Guess letter"
+  guess = gets.chomp
+
+  if game.check_letter(guess)
+    puts "Correct guess"
+    puts "Your progress #{game.player2_progress}"
+    if game.player2_progress.index("_") == nil
+      puts "You win"
+      game.is_over = true
+    end
+  else
+    puts "Wrong guess. "
+    puts "Your progress #{game.player2_progress}"
+  end
+  #game.is_over = true
+end
+
