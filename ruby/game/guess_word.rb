@@ -104,11 +104,14 @@ while !game.is_over
     puts "Your progress: #{game.player2_progress.join}"
   end
 
-  #game.is_over = true
+  if game.player2_progress.index('_') == nil
+    game.is_over = true
+  end
 end
 
 if game.won?
-  puts "You win. You guessed the correct word: #{game.word}"
+  puts "You win. You guessed the correct word: #{game.word} "\
+  "in #{game.guess_count} guesses"
 else
   puts "You lose with #{game.guess_count} guess(es). "\
   "The correct word is: #{game.word}"
