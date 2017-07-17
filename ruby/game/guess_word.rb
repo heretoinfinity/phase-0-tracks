@@ -91,11 +91,11 @@ while !game.is_over
   if game.check_letter(guess)
     puts ""
     puts "Correct guess"
-    puts "Your progress: #{game.player2_progress}"
+    puts "Your progress: #{game.player2_progress.join}"
 
   else
     puts "Wrong guess. "
-    puts "Your progress: #{game.player2_progress}"
+    puts "Your progress: #{game.player2_progress.join}"
   end
 
   #game.is_over = true
@@ -104,6 +104,6 @@ end
 if game.won?
   puts "You win. You guessed the correct word: #{game.word}"
 else
-  puts "You lose with #{game.guess_count}. "\
+  puts "You lose with #{game.guess_count} guesses. "\
   "The correct word is: #{game.word}"
 end
