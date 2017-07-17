@@ -30,13 +30,14 @@ Method to check if letter is in word
 
 class GuessWord
   attr_accessor :is_over
-  attr_reader :word, :guess_count, :player2_progress
+  attr_reader :word, :guess_count, :player2_progress; :won
 
   def initialize(word)
     @word = word
     @is_over = false
     @player2_progress = Array.new(word.length, "_")
     @guess_count = 0
+    @won = false
   end
 
   def update_player_progress(indices, letter)
@@ -52,8 +53,6 @@ class GuessWord
   end
 
   def check_letter(letter)
-    @guess_count += 1
-
     if @guess_count < @word.length
       indices = (0...@word.length).find_all do |i|
         @word[i, 1] == letter
@@ -61,33 +60,50 @@ class GuessWord
       correct = update_player_progress(indices, letter)
     end
 
+    @guess_count += 1
     if @guess_count == @word.length
       @is_over = true
     end
 
     return correct
   end
+
+  def won?
+    if @player2_progress.index("_") == nil
+      @won = true
+    end
+    return @won
+  end
 end
 
-game = GuessWord.new('cattle')
+puts "Welcome to Hang Man"
+puts "Player 1 Enter word"
+player1_word = gets.chomp
+
+game = GuessWord.new(player1_word)
 #puts word.word
 #puts word.check_letter('t')
 
 while !game.is_over
-  puts "Guess letter"
+  puts "Player 2 Guess letter"
   guess = gets.chomp
 
   if game.check_letter(guess)
+    puts ""
     puts "Correct guess"
-    puts "Your progress #{game.player2_progress}"
-    if game.player2_progress.index("_") == nil
-      puts "You win"
-      game.is_over = true
-    end
+    puts "Your progress: #{game.player2_progress}"
+
   else
     puts "Wrong guess. "
-    puts "Your progress #{game.player2_progress}"
+    puts "Your progress: #{game.player2_progress}"
   end
+
   #game.is_over = true
 end
 
+if game.won?
+  puts "You win. You guessed the correct word: #{game.word}"
+else
+  puts "You lose with #{game.guess_count}. "\
+  "The correct word is: #{game.word}"
+end
