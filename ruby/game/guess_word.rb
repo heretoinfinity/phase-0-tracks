@@ -54,6 +54,10 @@ class GuessWord
   end
 
   def check_letter(letter)
+    if @player2_progress.index(letter) != nil
+      @guess_count -= 1
+    end
+
     if @guess_count < @max_guess_count
       indices = (0...@word.length).find_all do |i|
         @word[i, 1] == letter
