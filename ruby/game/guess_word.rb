@@ -32,12 +32,13 @@ class GuessWord
   attr_accessor :is_over
   attr_reader :word, :guess_count, :player2_progress; :won
 
-  def initialize(word)
+  def initialize(word, max_guess_count)
     @word = word
     @is_over = false
     @player2_progress = Array.new(word.length, "_")
     @guess_count = 0
     @won = false
+    @max_guess_count = max_guess_count
   end
 
   def update_player_progress(indices, letter)
@@ -53,7 +54,7 @@ class GuessWord
   end
 
   def check_letter(letter)
-    if @guess_count < @word.length
+    if @guess_count < @max_guess_count
       indices = (0...@word.length).find_all do |i|
         @word[i, 1] == letter
       end
@@ -80,7 +81,8 @@ puts "Welcome to Hang Man"
 puts "Player 1 Enter word"
 player1_word = gets.chomp
 
-game = GuessWord.new(player1_word)
+game = GuessWord.new(player1_word, \
+  player1_word.length)
 #puts word.word
 #puts word.check_letter('t')
 
@@ -104,6 +106,6 @@ end
 if game.won?
   puts "You win. You guessed the correct word: #{game.word}"
 else
-  puts "You lose with #{game.guess_count} guesses. "\
+  puts "You lose with #{game.guess_count} guess(es). "\
   "The correct word is: #{game.word}"
 end
