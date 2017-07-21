@@ -6,3 +6,17 @@ Iterate through each element in the array from start to finish
   before it and retaining the longest length
 Return the longest length after getting to the end of the array
 */
+
+function findLongest(arr){
+  var longest = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length > longest){
+      longest = arr[i].length;
+    }
+  }
+  return longest;
+}
+
+// DRIVER CODE
+arr = ['one', 'four', 'fifty', 'thirteen'];
+console.log(findLongest(arr));
