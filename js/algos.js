@@ -31,7 +31,14 @@ pair in the 1st object up until the end
 */
 
 function compareObjects(obj1, obj2) {
-
+  for (var prop1 in obj1) {
+    for (var prop2 in obj2) {
+      if (prop1 == prop2 && obj1[prop1] == obj2[prop2]) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 /*
@@ -42,6 +49,15 @@ Take number of arguments
     add them to list
 return the list
 */
+
+console.log('1', compareObjects({name: "Steven", age: 54},
+  {name: "Tamir", age: 54})); // true
+console.log('2', compareObjects({animal: "Dog", legs: 4},
+  {animal: "Dog", legs: 3})); // true
+
+obj1 = {name: "A", age: 24};
+obj2 = {name: "B", age: 26};
+console.log('3', compareObjects(obj1, obj2));
 
 function generateRandomWords(words) {
   list = [];
