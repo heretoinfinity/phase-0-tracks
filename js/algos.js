@@ -18,8 +18,8 @@ function findLongest(arr){
 }
 
 // DRIVER CODE
-arr = ['one', 'four', 'fifty', 'thirteen'];
-console.log('longest word', findLongest(arr));
+// arr = ['one', 'four', 'fifty', 'thirteen'];
+// console.log('longest word', findLongest(arr));
 
 
 /*
@@ -62,4 +62,11 @@ function generateRandomWords(words) {
 // x = Math.round(25*Math.random());
 // console.log(x);
 // console.log(alphabet[x]);
-console.log(generateRandomWords(3));
+
+for (var i = 0; i < 10; i++) {
+  var words = generateRandomWords(5);
+  console.log(words);
+  console.log('The longest word is', findLongest(words), 'letters.');
+  console.log('-----------------------------------------')
+}
+// console.log(generateRandomWords(3));
