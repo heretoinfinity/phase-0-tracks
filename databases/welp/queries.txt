@@ -1,0 +1,46 @@
+-----------------------------------------------
+Question 2
+SELECT * FROM reviews
+   LEFT JOIN businesses ON businesses.id = reviews.business_id
+    LEFT JOIN users ON users.id = reviews.user_id;
+
+
+1|1|poor|1|5|1|Grundy Hollow Wedding Chapel|5|Holly|Berry
+2|3|not bad|2|3|2|Amir's Towing|3|Angela|Jolie
+3|4|waiter was gr8|3|3|3|The Beagle Nightclub|3|Angela|Jolie
+4|2|fly in food|4|2|4|Lotus Yoga|2|Mandy|Kaling
+5|4|amazing tables|5|1|5|Plumbing by Janet|1|Bradford|Pitt
+6|5|excellent|6|4|6|Sushi World|4|Steven|Wonder
+7|1|very poor|1|6|1|Grundy Hollow Wedding Chapel|6|Merryl|Streepman
+8|1|bad|2|7|2|Amir's Towing|7|Denzel|George
+9|3|just ok|4|7|4|Lotus Yoga|7|Denzel|George
+
+-----------------------------------------------
+Question 3
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews
+   LEFT JOIN businesses ON businesses.id = reviews.business_id
+   LEFT JOIN users ON users.id = reviews.user_id;
+
+Holly|Berry|Grundy Hollow Wedding Chapel|1|poor
+Angela|Jolie|Amir's Towing|3|not bad
+Angela|Jolie|The Beagle Nightclub|4|waiter was gr8
+Mandy|Kaling|Lotus Yoga|2|fly in food
+Bradford|Pitt|Plumbing by Janet|4|amazing tables
+Steven|Wonder|Sushi World|5|excellent
+Merryl|Streepman|Grundy Hollow Wedding Chapel|1|very poor
+Denzel|George|Amir's Towing|1|bad
+Denzel|George|Lotus Yoga|3|just ok
+
+-----------------------------------------------
+Question 4
+How do you view the data of all three tables for just one particular business?
+Add a WHERE condition to the query
+
+SELECT * FROM businesses
+   LEFT JOIN reviews ON businesses.id = reviews.business_id
+   LEFT JOIN users ON users.id = reviews.user_id
+   WHERE businesses.id = 1;
+
+1|Grundy Hollow Wedding Chapel|1|1|poor|1|5|5|Holly|Berry
+1|Grundy Hollow Wedding Chapel|7|1|very poor|1|6|6|Merryl|Streepman
