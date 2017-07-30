@@ -1,0 +1,60 @@
+-----------------------------------------------
+Question 1
+
+SELECT * FROM employees;
+
+1|1|Andrew Taylor|60000|false
+2|1|Andrea Brown|90000|true
+3|2|Jake Peters|80000|false
+4|2|Julie Brent|92000|true
+5|3|Jake Hudson|70000|false
+6|3|Audrey King|95000|true
+
+-----------------------------------------------
+Question 2
+SELECT * FROM employees WHERE salary > 70000;
+
+2|1|Andrea Brown|90000|true
+3|2|Jake Peters|80000|false
+4|2|Julie Brent|92000|true
+6|3|Audrey King|95000|true
+
+-----------------------------------------------
+Question 3
+SELECT * FROM employees, managers WHERE employees.manager_id = managers.id;
+
+1|1|Andrew Taylor|60000|false|1|Pat Simmons|150000|false
+2|1|Andrea Brown|90000|true|1|Pat Simmons|150000|false
+3|2|Jake Peters|80000|false|2|Simone Bell|200000|false
+4|2|Julie Brent|92000|true|2|Simone Bell|200000|false
+5|3|Jake Hudson|70000|false|3|Celene Anderson|250000|true
+6|3|Audrey King|95000|true|3|Celene Anderson|250000|true
+
+-----------------------------------------------
+Question 4
+SELECT managers.id, managers.name, employees.manager_id, employees.name
+  FROM employees, managers
+  WHERE employees.manager_id = managers.id;
+
+1|Pat Simmons|1|Andrew Taylor
+1|Pat Simmons|1|Andrea Brown
+2|Simone Bell|2|Jake Peters
+2|Simone Bell|2|Julie Brent
+3|Celene Anderson|3|Jake Hudson
+3|Celene Anderson|3|Audrey King
+
+-----------------------------------------------
+Question 5
+DELETE FROM employees WHERE name IS 'Jake Peters';
+
+SELECT managers.id, managers.name, employees.manager_id, employees.name
+  FROM employees, managers
+  WHERE employees.manager_id = managers.id;
+
+1|Pat Simmons|1|Andrew Taylor
+1|Pat Simmons|1|Andrea Brown
+2|Simone Bell|2|Julie Brent
+3|Celene Anderson|3|Jake Hudson
+3|Celene Anderson|3|Audrey King
+-----------------------------------------------
+
