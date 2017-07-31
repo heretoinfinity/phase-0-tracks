@@ -61,6 +61,21 @@ def edit_list(database, list_name, task_id, new_task_name)
   database.execute(edit_list_cmd)
 end
 
+# def display_lists(database)
+#   display_cmd = <<-SQL
+#     SELECT name FROM sqlite_master WHERE type='table';
+#   SQL
+#   database.execute(display_cmd)
+# end
+
+def delete_list(database, list_name)
+  delete_list_cmd = <<-SQL
+    DROP TABLE #{list_name}
+  SQL
+  database.execute(delete_list_cmd)
+end
+
+
 db = SQLite3::Database.new("to_do_list.db")
 
 create_list(db, 'school')
@@ -69,6 +84,8 @@ add_task(db, 'school', 'chemistry')
 #view_list(db, 'school')
 edit_list(db, 'school', 1, 'physics')
 view_list(db, 'school')
+# delete_list(db, 'school')
+# display_lists(db)
 
 # instruction = gets.chomp
 # instruction_arr = get_string_arguments(instruction)
