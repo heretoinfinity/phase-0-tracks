@@ -8,7 +8,7 @@ VIEW list_name - to see tasks in the list including their ids
 ADD list_name task_name - to add task_name to the list
 EDIT list_name task_id new_task_name - to edit task_name to the list
 DELETE_LIST list_name
-DELETE_TAST task_name
+DELETE_TASK task_name
 EXIT - to exit program
 --------------------------------------------------------------------------
 MESSAGE
@@ -42,18 +42,32 @@ def view_list(database, list_name)
 end
 
 def add_task(database, list_name, task_name)
-  add_task_cmd = "INSERT INTO " + list_name + \
-  " (task) VALUES ('" + task_name + "');"
-  # ' (task) VALUES (' + task_name + ');'
+  add_task_cmd = <<-SQL
+  INSERT INTO #{list_name} (task)
+  VALUES ('#{task_name}');
+   SQL
   # p add_task_cmd
   database.execute(add_task_cmd)
+end
+
+def edit_list(database, list_name, task_id, new_task_name)
+  edit_list_cmd = <<-SQL
+  UPDATE #{list_name}
+  SET task = '#{new_task_name}'
+  WHERE id = #{task_id}
+  ;
+  SQL
+  # puts edit_list_cmd
+  database.execute(edit_list_cmd)
 end
 
 db = SQLite3::Database.new("to_do_list.db")
 
 create_list(db, 'school')
-view_list(db, 'school')
+#view_list(db, 'school')
 add_task(db, 'school', 'chemistry')
+#view_list(db, 'school')
+edit_list(db, 'school', 1, 'physics')
 view_list(db, 'school')
 
 # instruction = gets.chomp
