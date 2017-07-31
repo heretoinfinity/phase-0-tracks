@@ -19,31 +19,52 @@ def get_string_arguments(str)
   return str.split(" ")
 end
 
-create_list_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS kittens(
+def create_list(database, list_name)
+  create_list_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS #{list_name} (
     id INTEGER PRIMARY KEY,
-    task VARCHAR(255)
+    task VARCHAR(255),
   )
 SQL
 
-db = SQLite3::Database.new("to_do.db")
-
-
-
-instruction = gets.chomp
-instruction_arr = get_string_arguments(instruction)
-allowed_commands = ['CREATE', 'VIEW', 'ADD', 'EDIT', \
-  'DELETE_LIST', 'DELETE_TASK', 'EXIT']
-
-while instruction_arr[0] != 'EXIT'
-  #p get_string_arguments(instruction)
-  if allowed_commands.index(instruction_arr[0]) == nil
-    puts "======================================"
-    puts "ERROR: ENTER COMMANDS IN GIVEN FORMAT"
-    puts "======================================"
-    puts instruction_list_message
-  end
-  instruction = gets.chomp
-  instruction_arr = get_string_arguments(instruction)
+  database.execute(create_list_cmd)
 end
+
+def view_list(database, list_name)
+  view_list_cmd = 'SELECT * FROM ' + list_name + ';'
+
+  results = database.execute(view_list_cmd)
+  # puts results.class
+  puts results
+  # results.each do |row|
+  #   puts "#{row[0]}"
+  # end
+end
+
+def add_task(database, list_name, task_name)
+  add_task_cmd = 'INSERT INTO ' + list_name +
+  database.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
+end
+
+db = SQLite3::Database.new("to_do_list.db")
+
+create_list(db, 'school')
+view_list(db, 'school')
+
+# instruction = gets.chomp
+# instruction_arr = get_string_arguments(instruction)
+# allowed_commands = ['CREATE', 'VIEW', 'ADD', 'EDIT', \
+#   'DELETE_LIST', 'DELETE_TASK', 'EXIT']
+
+# while instruction_arr[0] != 'EXIT'
+#   #p get_string_arguments(instruction)
+#   if allowed_commands.index(instruction_arr[0]) == nil
+#     puts "======================================"
+#     puts "ERROR: ENTER COMMANDS IN GIVEN FORMAT"
+#     puts "======================================"
+#     puts instruction_list_message
+#   end
+#   instruction = gets.chomp
+#   instruction_arr = get_string_arguments(instruction)
+# end
 
