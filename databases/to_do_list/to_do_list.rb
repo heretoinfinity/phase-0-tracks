@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-welcome_message =  <<-MESSAGE
+instruction_list_message =  <<-MESSAGE
 Commands that can be used in this To-Do list app
 --------------------------------------------------------------------------
 CREATE list_name - to start a new list called list_name
@@ -13,7 +13,7 @@ EXIT - to exit program
 --------------------------------------------------------------------------
 MESSAGE
 
-puts welcome_message
+puts instruction_list_message
 
 def get_string_arguments(str)
   return str.split(" ")
@@ -41,7 +41,7 @@ while instruction_arr[0] != 'EXIT'
     puts "======================================"
     puts "ERROR: ENTER COMMANDS IN GIVEN FORMAT"
     puts "======================================"
-    puts welcome_message
+    puts instruction_list_message
   end
   instruction = gets.chomp
   instruction_arr = get_string_arguments(instruction)
