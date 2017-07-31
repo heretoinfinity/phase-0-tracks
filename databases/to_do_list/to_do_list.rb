@@ -8,7 +8,7 @@ VIEW list_name - to see tasks in the list including their ids
 ADD list_name task_name - to add task_name to the list
 EDIT list_name task_id new_task_name - to edit task_name to the list
 DELETE_LIST list_name
-DELETE_TASK task_name
+DELETE_TASK list_name task_name
 EXIT - to exit program
 --------------------------------------------------------------------------
 MESSAGE
@@ -75,6 +75,13 @@ def delete_list(database, list_name)
   database.execute(delete_list_cmd)
 end
 
+def delete_task(database, list_name, task_id)
+  delete_task_cmd = <<-SQL
+    DELETE FROM #{list_name}
+    WHERE id IS #{task_id};
+  SQL
+  database.execute(delete_task_cmd)
+end
 
 db = SQLite3::Database.new("to_do_list.db")
 
@@ -83,6 +90,10 @@ create_list(db, 'school')
 add_task(db, 'school', 'chemistry')
 #view_list(db, 'school')
 edit_list(db, 'school', 1, 'physics')
+puts "---"
+view_list(db, 'school')
+delete_task(db, 'school', 1)
+puts "---"
 view_list(db, 'school')
 # delete_list(db, 'school')
 # display_lists(db)
