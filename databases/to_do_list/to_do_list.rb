@@ -23,7 +23,7 @@ def create_list(database, list_name)
   create_list_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS #{list_name} (
     id INTEGER PRIMARY KEY,
-    task VARCHAR(255),
+    task VARCHAR(255)
   )
 SQL
 
@@ -43,9 +43,9 @@ end
 
 # def add_task(database, list_name, task_name)
 #   add_task_cmd = 'INSERT INTO ' + list_name + \
-#   ' (id) VALUES (' + task_name + ')'
-#   p add_task_cmd
-#   # database.execute(add_task_cmd)
+#   ' (task) VALUES (' + task_name + ')'
+#   # p add_task_cmd
+#   database.execute(add_task_cmd)
 # end
 
 db = SQLite3::Database.new("to_do_list.db")
