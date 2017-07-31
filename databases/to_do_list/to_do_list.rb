@@ -13,18 +13,27 @@ EXIT - to exit program
 --------------------------------------------------------------------------
 MESSAGE
 
-db = SQLite3::Database.new("to_do.db")
-
 def get_string_arguments(str)
   return str.split(" ")
 end
 
-instruction = gets.chomp
-p get_string_arguments(instruction)
-
 create_list_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS kittens(
     id INTEGER PRIMARY KEY,
-    task VARCHAR(255),
+    task VARCHAR(255)
   )
 SQL
+
+db = SQLite3::Database.new("to_do.db")
+
+
+
+instruction = gets.chomp
+instruction_arr = get_string_arguments(instruction)
+
+while instruction_arr[0] != 'EXIT'
+  #p get_string_arguments(instruction)
+  instruction = gets.chomp
+  instruction_arr = get_string_arguments(instruction)
+end
+
