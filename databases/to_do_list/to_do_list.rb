@@ -41,14 +41,17 @@ def view_list(database, list_name)
   # end
 end
 
-def add_task(database, list_name, task_name)
-  add_task_cmd = 'INSERT INTO ' + list_name +
-  database.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
-end
+# def add_task(database, list_name, task_name)
+#   add_task_cmd = 'INSERT INTO ' + list_name + \
+#   ' (id) VALUES (' + task_name + ')'
+#   p add_task_cmd
+#   # database.execute(add_task_cmd)
+# end
 
 db = SQLite3::Database.new("to_do_list.db")
 
 create_list(db, 'school')
+# add_task(db, 'school', 'chemistry')
 view_list(db, 'school')
 
 # instruction = gets.chomp
