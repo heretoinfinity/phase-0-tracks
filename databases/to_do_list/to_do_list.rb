@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-puts <<-MESSAGE
+welcome_message =  <<-MESSAGE
 Commands that can be used in this To-Do list app
 --------------------------------------------------------------------------
 CREATE list_name - to start a new list called list_name
@@ -12,6 +12,8 @@ DELETE_TAST task_name
 EXIT - to exit program
 --------------------------------------------------------------------------
 MESSAGE
+
+puts welcome_message
 
 def get_string_arguments(str)
   return str.split(" ")
@@ -30,9 +32,17 @@ db = SQLite3::Database.new("to_do.db")
 
 instruction = gets.chomp
 instruction_arr = get_string_arguments(instruction)
+allowed_commands = ['CREATE', 'VIEW', 'ADD', 'EDIT', \
+  'DELETE_LIST', 'DELETE_TASK', 'EXIT']
 
 while instruction_arr[0] != 'EXIT'
   #p get_string_arguments(instruction)
+  if allowed_commands.index(instruction_arr[0]) == nil
+    puts "======================================"
+    puts "ERROR: ENTER COMMANDS IN GIVEN FORMAT"
+    puts "======================================"
+    puts welcome_message
+  end
   instruction = gets.chomp
   instruction_arr = get_string_arguments(instruction)
 end
