@@ -42,3 +42,21 @@ A POST request is an HTTP request to update a resource in
 a server.
 
 Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+A cookie is a file that is stored on the user's computer,
+after accessing a website, that will be used the next by
+that website will be visted again so as to tailor the
+user's experience based on the first and subsequent visits.
+Essentially, cookies help with remembering information
+about the user. This includes:
+1. authentication and allowing the server to know when it can
+send sensitive material only when the user is logged in.
+2. remembering what the user has selected, in say, his
+shopping cart, or entered, like name, address and credit
+card information.
+3.remembering the track record of the user's activities
+to determine habit trends
+
+After a browser sends an HTTP request to a server, the server
+may send a response with a cookie. The browser then saves the
+cookie and then next time it sends a request to the server,
+it sends the request with the cookie.
