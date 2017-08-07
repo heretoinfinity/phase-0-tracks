@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>Campuses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Campuses</h1>
+  <p>Click <a href="/campuses/add_campus">here</a> to add a new campus.</p>
+  <ul>
+    <% @campuses.each do |campus| %>
+      <li><%= campus['id'] %>. <%= campus['campus'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Student Management System</title>
+</head>
+<body>
+  <h1>Age Query</h1>
+  <p>Displays name of students older than entered age</p>
+  <ul>
+    <% @students_age.each do |student| %>
+      <%# if students_age['age'] > params['age'].to_i %>
+        <li><%= student['name'] %></li>
+      <%# end %>
+    <% end %>
+  </ul>
+</body>
+</html>
